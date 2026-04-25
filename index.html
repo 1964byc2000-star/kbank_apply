@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>최지현 | 케이뱅크 언론홍보 Portfolio</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+:root {
+  /* K-Bank Design Tokens */
+  --text-primary: #141823;
+  --text-secondary: #454d5b;
+  --text-muted: #979088;
+  --text-light: #5F7289;
+
+  --accent: #0561aa;
+  --accent-soft: rgba(5,97,170,0.08);
+
+  --bg: #ffffff;
+  --bg-cream: #f3f1ed;
+  --bg-cream-soft: #f8f8f6;
+  --bg-light: #f9f9f9;
+  --bg-warm: #f3f2ee;
+
+  --border: #e0e0e1;
+  --border-warm: #d6cdc3;
+  --taupe: #d1c8bd;
+  --taupe-deep: #b1a9a0;
+
+  --green: #2f8f5a;
+  --warning: #c97b1a;
+  --soft-pink: #fce4e1;
+  --soft-blue: #e3eef9;
+  --soft-cream-card: #faf8f4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-feature-settings: 'cv02' on, 'cv03' on, 'cv04' on;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout shell ── */
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+/* ── Hero header ── */
+.hero {
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 36px;
+  align-items: center;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(5,97,170,0.12) 0%, rgba(5,97,170,0.02) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(243,241,237,0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--bg-cream);
+  box-shadow: 0 8px 24px rgba(20,24,35,0.08);
+}
+.hero-name {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.hero-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-cream);
+  border: 1px solid var(--border-warm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.hero-role::before { content: '●'; color: var(--accent); font-size: 8px; }
+.hero-tagline {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+.hero-tagline .em { color: var(--accent); }
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.hero-meta .item { display: flex; gap: 6px; align-items: center; }
+.hero-meta .label { color: var(--text-muted); font-weight: 500; }
+
+/* ── Top nav ── */
+.tab-nav {
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 4px;
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(20,24,35,0.06);
+  overflow-x: auto;
+}
+.tab-btn {
+  flex: 1;
+  min-width: max-content;
+  padding: 12px 22px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: all 0.15s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text-primary); background: var(--bg-cream); }
+.tab-btn.active {
+  background: var(--text-primary);
+  color: #fff;
+}
+
+/* ── Section card ── */
+.card {
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 36px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+}
+.card-cream {
+  background: var(--bg-cream);
+  border-color: var(--border-warm);
+}
+
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 999px;
+  display: inline-block;
+}
+.section-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.section-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.sub-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 32px 0 16px;
+  letter-spacing: -0.01em;
+}
+.sub-title:first-child { margin-top: 0; }
+
+/* ── Tab content ── */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── Lead callout ── */
+.lead {
+  background: linear-gradient(135deg, var(--bg-cream-soft), var(--bg-cream));
+  border-left: 4px solid var(--accent);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 28px;
+}
+.lead p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.lead strong { color: var(--accent); font-weight: 700; }
+
+/* ── Stat grid ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.stat {
+  background: var(--soft-cream-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  text-align: center;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.stat::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.stat:hover {
+  border-color: var(--accent);
+  background: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5,97,170,0.08);
+}
+.stat .stat-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 10px;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+.stat .num {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+.stat .num .accent { color: var(--accent); }
+.stat .label {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Match bars ── */
+.match-list { display: flex; flex-direction: column; gap: 16px; }
+.match {
+  background: var(--bg-cream-soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.match-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.match-name { font-weight: 700; color: var(--text-primary); }
+.match-pct { font-weight: 800; color: var(--accent); font-size: 18px; }
+.match-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.match-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #4a91d4);
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Timeline ── */
+.timeline { display: flex; flex-direction: column; gap: 12px; }
+.timeline-row {
+  display: grid;
+  grid-template-columns: 50px 160px 1fr;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--soft-cream-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  align-items: start;
+}
+.timeline-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.timeline-icon svg { width: 22px; height: 22px; }
+.timeline-period {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.timeline-period .duration {
+  display: block;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+  font-size: 11px;
+}
+.timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.timeline-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Skill matrix ── */
+.skill-list { display: flex; flex-direction: column; gap: 10px; }
+.skill-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  align-items: center;
+}
+.skill-row:hover { border-color: var(--accent); }
+.skill-meta { min-width: 0; }
+.skill-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.skill-evidence {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.skill-level {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.lv-pill {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.lv-5 { background: var(--accent); color: #fff; }
+.lv-4 { background: var(--bg-cream); color: var(--accent); border: 1px solid var(--accent); }
+.lv-stars {
+  font-size: 13px;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.lv-stars .empty { color: var(--border-warm); }
+
+/* ── Triple cards ── */
+.triple-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+.triple-card {
+  background: var(--soft-cream-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+}
+.triple-card .icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.triple-card .icon svg { width: 24px; height: 24px; }
+.triple-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.triple-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+/* ── Mermaid wrap ── */
+.mermaid-wrap {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin: 16px 0 24px;
+  overflow-x: auto;
+}
+.mermaid-wrap .mermaid { display: flex; justify-content: center; min-height: 200px; }
+
+/* ── Custom 4-step cycle flow ── */
+.cycle-flow {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr 32px 1fr 32px 1fr;
+  gap: 0;
+  align-items: stretch;
+  position: relative;
+}
+.cycle-card {
+  background: var(--soft-cream-card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+.cycle-card.cycle-1 { border-color: var(--border-warm); }
+.cycle-card.cycle-2 { background: var(--bg-cream); border-color: var(--border-warm); }
+.cycle-card.cycle-3 { background: #e3eef9; border-color: var(--accent); border-width: 1.5px; }
+.cycle-card.cycle-4 { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cycle-card .cycle-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.cycle-card.cycle-4 .cycle-num { color: rgba(255,255,255,0.75); }
+.cycle-card .cycle-eng {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.cycle-card.cycle-4 .cycle-eng { color: #fff; }
+.cycle-card .cycle-kor {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.cycle-card.cycle-4 .cycle-kor { color: rgba(255,255,255,0.75); }
+.cycle-card .cycle-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 12px;
+}
+.cycle-card.cycle-4 .cycle-divider { background: rgba(255,255,255,0.25); }
+.cycle-card .cycle-detail {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  font-weight: 500;
+}
+.cycle-card.cycle-4 .cycle-detail { color: rgba(255,255,255,0.9); }
+.cycle-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 22px;
+}
+.cycle-loop {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+.cycle-loop-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-cream);
+  border: 1px dashed var(--border-warm);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+/* ── Mapping (2-column linked) ── */
+.mapping-grid {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.mapping-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mapping-title {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.mapping-col.left .mapping-title {
+  background: var(--bg-cream);
+  color: var(--text-primary);
+  border: 1px solid var(--border-warm);
+}
+.mapping-col.right .mapping-title {
+  background: var(--accent);
+  color: #fff;
+}
+.mapping-item {
+  background: var(--soft-cream-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.45;
+  text-align: center;
+  font-weight: 600;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mapping-col.right .mapping-item {
+  background: #e3eef9;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.mapping-bridge {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 36px 0 0;
+}
+.mapping-bridge-arrow {
+  width: 100%;
+  height: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+}
+.mapping-bridge-arrow::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+.mapping-bridge-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 8px solid var(--accent);
+}
+
+/* ── Project flow (5 steps) ── */
+.project-flow {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr 24px 1fr 24px 1fr 24px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.flow-card {
+  background: var(--soft-cream-card);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  position: relative;
+}
+.flow-card.tone-problem { background: #fbf3f0; border-color: var(--taupe-deep); }
+.flow-card.tone-cream { background: var(--soft-cream-card); }
+.flow-card.tone-cream2 { background: var(--bg-cream); border-color: var(--border-warm); }
+.flow-card.tone-blue-soft { background: #e3eef9; border-color: var(--accent); border-width: 1.5px; }
+.flow-card.tone-blue-mid { background: #cce0f0; border-color: var(--accent); border-width: 1.5px; }
+.flow-card.tone-blue-deep { background: var(--accent); border-color: var(--accent); }
+.flow-card .flow-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.flow-card.tone-problem .flow-tag { color: var(--warning); }
+.flow-card.tone-blue-deep .flow-tag { color: rgba(255,255,255,0.85); }
+.flow-card .flow-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.flow-card.tone-blue-deep .flow-name { color: #fff; }
+.flow-card .flow-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 8px;
+}
+.flow-card.tone-blue-deep .flow-divider { background: rgba(255,255,255,0.25); }
+.flow-card.tone-blue-soft .flow-divider,
+.flow-card.tone-blue-mid .flow-divider { background: rgba(5,97,170,0.2); }
+.flow-card .flow-detail {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.flow-card.tone-blue-deep .flow-detail { color: rgba(255,255,255,0.92); }
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .cycle-flow,
+  .project-flow { grid-template-columns: 1fr; gap: 12px; }
+  .cycle-arrow,
+  .flow-arrow { transform: rotate(90deg); }
+  .mapping-grid { grid-template-columns: 1fr; }
+  .mapping-bridge { flex-direction: row; padding: 12px 0; }
+  .mapping-bridge-arrow { transform: rotate(90deg); width: 14px; }
+}
+
+/* ── 4-step grid ── */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+.step-card {
+  background: var(--soft-cream-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+.step-card .step-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg);
+  border: 1.5px solid var(--accent);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.step-card .step-icon svg { width: 26px; height: 26px; }
+.step-card .step-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.step-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.step-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Fit table ── */
+.fit-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.fit-table th {
+  background: var(--bg-cream);
+  color: var(--text-primary);
+  padding: 14px 18px;
+  font-size: 13px;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+.fit-table td {
+  padding: 18px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.65;
+}
+.fit-table td:first-child {
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 36%;
+  background: var(--bg-cream-soft);
+}
+.fit-table tr:first-child td { border-top: none; }
+.fit-table strong { color: var(--accent); font-weight: 700; }
+
+/* ── Project card ── */
+.project {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 18px;
+}
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.project-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.project-period {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-cream);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.project-quote {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 14px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.project-result {
+  background: var(--bg-cream);
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 13.5px;
+  color: var(--text-primary);
+  margin-top: 14px;
+  border-left: 3px solid var(--green);
+}
+.project-result strong { color: var(--accent); font-weight: 800; }
+.project-result-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--green);
+  background: rgba(47,143,90,0.1);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-right: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Gap card ── */
+.gap-list { display: flex; flex-direction: column; gap: 14px; }
+.gap-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.gap-left {
+  background: var(--bg-cream);
+  padding: 24px 22px;
+  border-right: 1px solid var(--border);
+}
+.gap-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg);
+  border: 1px solid var(--border-warm);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warning);
+  margin-bottom: 14px;
+}
+.gap-icon svg { width: 20px; height: 20px; }
+.gap-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--warning);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.gap-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.gap-q {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+  background: rgba(255,255,255,0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.gap-right { padding: 24px 26px; }
+.gap-answer {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.gap-answer strong { color: var(--text-primary); font-weight: 700; }
+.transfer {
+  display: flex;
+  align-items: center;
+  background: var(--bg-cream-soft);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.transfer-from { flex: 1; text-align: center; color: var(--text-muted); font-weight: 600; }
+.transfer-arrow { padding: 0 14px; color: var(--accent); font-size: 14px; font-weight: 700; }
+.transfer-to { flex: 1; text-align: center; color: var(--accent); font-weight: 700; }
+.gap-evidence {
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gap-evidence::before {
+  content: '✓';
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+/* ── Plan grid ── */
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.plan-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 16px;
+  padding: 24px 22px;
+  position: relative;
+}
+.plan-card .plan-num {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--accent-soft);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.plan-phase {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+.plan-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.plan-card ul { list-style: none; padding: 0; }
+.plan-card li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.plan-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .shell { padding: 24px 16px; }
+  .hero { grid-template-columns: 1fr; padding: 32px 24px; text-align: center; }
+  .hero-photo { margin: 0 auto; }
+  .hero-meta { justify-content: center; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .triple-grid, .plan-grid, .step-grid { grid-template-columns: 1fr; }
+  .timeline-row { grid-template-columns: 1fr; gap: 8px; }
+  .gap-card { grid-template-columns: 1fr; }
+  .gap-left { border-right: none; border-bottom: 1px solid var(--border); }
+  .card { padding: 24px 20px; }
+}
+
+/* ── Print ── */
+@media print {
+  body { background: #fff; }
+  .tab-nav { display: none; }
+  .tab-content { display: block !important; page-break-before: always; }
+  .tab-content:first-of-type { page-break-before: auto; }
+  .card { box-shadow: none; border: 1px solid #ddd; }
+  .stat:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <img src="profile.png" alt="최지현" class="hero-photo" />
+    <div>
+      <div class="hero-name">최지현</div>
+      <div class="hero-role">케이뱅크 PR팀 · 언론홍보 담당자 지원</div>
+      <div class="hero-tagline">
+        규제기관을 직접 상대하며 위기 대응 체계를 설계해온 <span class="em">5년차 커뮤니케이터</span>.<br>
+        상장 첫해 ‘테크 리딩 뱅크’ 성장 스토리를 흔들림 없이 전달합니다.
+      </div>
+      <div class="hero-meta">
+        <div class="item"><span class="label">전화</span> 010-9952-4726</div>
+        <div class="item"><span class="label">메일</span> 1964byc2000@gmail.com</div>
+        <div class="item"><span class="label">주소</span> 서울 강동구</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── TAB NAV ── -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="showTab(event, 'overview')">Overview</button>
+    <button class="tab-btn" onclick="showTab(event, 'skills')">Skill Matrix</button>
+    <button class="tab-btn" onclick="showTab(event, 'work')">How I Work</button>
+    <button class="tab-btn" onclick="showTab(event, 'fit')">Role Fit</button>
+    <button class="tab-btn" onclick="showTab(event, 'projects')">Projects</button>
+    <button class="tab-btn" onclick="showTab(event, 'gap')">Gap & 90-Day</button>
+  </nav>
+
+  <!-- ── TAB 1: OVERVIEW ── -->
+  <section class="tab-content active" id="overview">
+    <article class="card">
+      <div class="section-eyebrow">Overview</div>
+      <h2 class="section-title">한 눈에 보는 최지현</h2>
+      <p class="section-desc">규제기관 직접 대응과 다자 이해관계자 커뮤니케이션 5년의 경험을, 케이뱅크 PR팀의 실전 우선과제에 그대로 적용합니다.</p>
+
+      <div class="lead">
+        <p>케이뱅크는 상장 첫해 <strong>‘테크 리딩 뱅크’</strong>로의 전환 국면에 있습니다. 언론·시장·임직원 3자에 같은 메시지가 흔들림 없이 닿는 <strong>구조를 만드는 일</strong> — 제가 5년간 해온 일과 같습니다.</p>
+      </div>
+
+      <h3 class="sub-title">핵심 성과</h3>
+      <div class="stat-grid">
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="num">5<span style="font-size:18px">년</span></div><div class="label">통합 커뮤니케이션 경력</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <div class="num"><span class="accent">20</span><span style="font-size:18px">억</span></div><div class="label">사업비 수주 (150%↑)</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="num">500<span style="font-size:18px">곳+</span></div><div class="label">이해관계자 네트워크</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="num"><span class="accent">80</span><span style="font-size:18px">%↓</span></div><div class="label">동일 규정 위반 감소</div>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <div class="num"><span class="accent">87.5</span><span style="font-size:18px">%↓</span></div><div class="label">메시지 도달 시간 (30분→1분)</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div class="num">100<span style="font-size:18px">%</span></div><div class="label">단일 메시지 일관성</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <div class="num">6<span style="font-size:18px">종</span></div><div class="label">멀티포맷 콘텐츠 직접 제작</div>
+        </div>
+        <div class="stat">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          <div class="num">ZERO</div><div class="label">고객 민원 제로 연속 달성</div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">케이뱅크 PR팀 JD 매칭도</h3>
+      <div class="match-list">
+        <div class="match">
+          <div class="match-head"><span class="match-name">① 홍보 전략 수립 · 홍보 아이템 발굴·기획</span><span class="match-pct">85%</span></div>
+          <div class="match-bar"><div class="match-fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="match">
+          <div class="match-head"><span class="match-name">② 기획 홍보 실행 · 보도자료 작성 · 언론 커뮤니케이션</span><span class="match-pct">75%</span></div>
+          <div class="match-bar"><div class="match-fill" style="width: 75%;"></div></div>
+        </div>
+        <div class="match">
+          <div class="match-head"><span class="match-name">③ 언론 리스크 관리 · 이슈 설명자료 작성·협의</span><span class="match-pct">95%</span></div>
+          <div class="match-bar"><div class="match-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="match">
+          <div class="match-head"><span class="match-name">④ 협회 등 외부 유관기관 업무 협력 커뮤니케이션</span><span class="match-pct">90%</span></div>
+          <div class="match-bar"><div class="match-fill" style="width: 90%;"></div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3 class="sub-title" style="margin-top: 0;">Career Timeline</h3>
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="timeline-period">2025.01 ~ 현재<span class="duration">1년 3개월</span></div>
+          <div>
+            <div class="timeline-title">현대홈쇼핑 · 브랜드커뮤니케이션팀 · 선임(대리)</div>
+            <div class="timeline-desc">정부사업 기획·수주·운영 + 다자 이해관계자 조율 + 신사업 내부 브랜딩. 연 20억 수주(150%↑), 300곳 신규 협력사 소싱.</div>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div class="timeline-period">2021.06 ~ 2024.12<span class="duration">3년 6개월</span></div>
+          <div>
+            <div class="timeline-title">현대홈쇼핑 · 심의팀 · 선임(사원)</div>
+            <div class="timeline-desc">방심위·식약처 소명자료 직접 작성. One Source 표준 키메시지 체계 구축. 규정 위반 80% 감소, 민원 제로 연속 달성.</div>
+          </div>
+        </div>
+        <div class="timeline-row">
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="timeline-period">2021.02 ~ 2021.04<span class="duration">3개월</span></div>
+          <div>
+            <div class="timeline-title">SK머트리얼즈 · 기업문화실 · PL(인턴)</div>
+            <div class="timeline-desc">LinkedIn 기반 R&amp;D 핵심 인재 서칭. 채용 브랜딩 전략 제안서 작성. 1명 채용 성공.</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ── TAB 2: SKILLS ── -->
+  <section class="tab-content" id="skills">
+    <article class="card">
+      <div class="section-eyebrow">Chapter 1</div>
+      <h2 class="section-title">Skill Matrix</h2>
+      <p class="section-desc">규제기관의 언어를 이해하고, 데이터와 콘텐츠를 활용해 이해관계자별 메시지를 설계하는 커뮤니케이션 담당자입니다.</p>
+
+      <h3 class="sub-title">핵심 역량 수준</h3>
+      <div class="skill-list">
+        <div class="skill-row">
+          <div class="skill-meta">
+            <div class="skill-name">1. 언론 리스크 관리 · 이슈 설명자료 작성</div>
+            <div class="skill-evidence">방심위·식약처 소명자료 3년 6개월 · One Source 구축 · 규정 위반 80% 감소 · 민원 ZERO</div>
+          </div>
+          <div class="skill-level">
+            <span class="lv-stars">★★★★★</span>
+            <span class="lv-pill lv-5">Lv.5</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta">
+            <div class="skill-name">2. 이해관계자 분석 기반 메시지 설계</div>
+            <div class="skill-evidence">기관 KPI 역설계 → 제안서 전략 · PT 총괄 → 연 20억 수주(150%↑) · 4가지+ 이해관계자별 문서</div>
+          </div>
+          <div class="skill-level">
+            <span class="lv-stars">★★★★★</span>
+            <span class="lv-pill lv-5">Lv.5</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta">
+            <div class="skill-name">3. 콘텐츠 기획 및 제작 역량</div>
+            <div class="skill-evidence">숏폼·FAQ·체크리스트·PPT 등 멀티 콘텐츠 · 반복 활용률 5배 · 도달 시간 87.5% 단축</div>
+          </div>
+          <div class="skill-level">
+            <span class="lv-stars">★★★★★</span>
+            <span class="lv-pill lv-5">Lv.5</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta">
+            <div class="skill-name">4. 데이터 기반 이슈 분석 · 성과 검증</div>
+            <div class="skill-evidence">Power BI 기반 오류 패턴 분석 · 고리스크 이슈 선제 도출 · 대응 콘텐츠 10편 제작</div>
+          </div>
+          <div class="skill-level">
+            <span class="lv-stars">★★★★<span class="empty">★</span></span>
+            <span class="lv-pill lv-4">Lv.4</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta">
+            <div class="skill-name">5. 이해관계자 관계 구축 · 조율</div>
+            <div class="skill-evidence">정부기관·지자체·협력사 500곳 외부 관계 · 설명회→가이드→소통채널 체계 · 내부 부서 조율</div>
+          </div>
+          <div class="skill-level">
+            <span class="lv-stars">★★★★★</span>
+            <span class="lv-pill lv-5">Lv.5</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Hard / Soft / Tools</h3>
+      <div class="triple-grid">
+        <div class="triple-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h4>Hard Skills</h4>
+          <p>· 언론 리스크 관리</p>
+          <p>· 대외 메시지 전략 수립</p>
+          <p>· 창의적 홍보 콘텐츠 제작</p>
+          <p>· 데이터 기반 이슈 분석</p>
+        </div>
+        <div class="triple-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Soft Skills</h4>
+          <p>· 다자 이해관계자 커뮤니케이션</p>
+          <p>· 경쟁 PT · 발표 리딩</p>
+          <p>· [필요성–전략–개인 역할] 메시지 구조 설계</p>
+        </div>
+        <div class="triple-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h4>Tools</h4>
+          <p>· Power BI (데이터 분석)</p>
+          <p>· AI 챗봇 One Source 가이드</p>
+          <p>· MS Office · Teams</p>
+          <p>· 숏폼 영상 편집 · Google Form</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ── TAB 3: HOW I WORK ── -->
+  <section class="tab-content" id="work">
+    <article class="card">
+      <div class="section-eyebrow">Chapter 2</div>
+      <h2 class="section-title">How I Work — 일하는 방식</h2>
+      <p class="section-desc">위기 상황일수록 대응 속도보다 ‘조직이 하나의 기준으로 말할 수 있는 구조’가 중요합니다.</p>
+
+      <div class="lead">
+        <p>커뮤니케이션의 핵심은 <strong>‘메시지가 처음부터 흔들리지 않는 것’</strong>입니다. 실제 성과는 체계를 만들고, 데이터로 검증하고, 피드백 루프를 돌리는 일하는 방식에서 나옵니다.</p>
+      </div>
+
+      <h3 class="sub-title">4단계 사이클 — Diagnose → Design → Deliver → Measure</h3>
+      <div class="mermaid-wrap">
+        <div class="cycle-flow">
+          <div class="cycle-card cycle-1">
+            <div class="cycle-num">STEP 01</div>
+            <div class="cycle-eng">Diagnose</div>
+            <div class="cycle-kor">진단</div>
+            <div class="cycle-divider"></div>
+            <div class="cycle-detail">오류·민원·반응<br>데이터 분석</div>
+          </div>
+          <div class="cycle-arrow">→</div>
+          <div class="cycle-card cycle-2">
+            <div class="cycle-num">STEP 02</div>
+            <div class="cycle-eng">Design</div>
+            <div class="cycle-kor">설계</div>
+            <div class="cycle-divider"></div>
+            <div class="cycle-detail">이슈 유형별<br>키메시지 설계</div>
+          </div>
+          <div class="cycle-arrow">→</div>
+          <div class="cycle-card cycle-3">
+            <div class="cycle-num">STEP 03</div>
+            <div class="cycle-eng">Deliver</div>
+            <div class="cycle-kor">전달</div>
+            <div class="cycle-divider"></div>
+            <div class="cycle-detail">FAQ·설명자료<br>·숏폼 확산</div>
+          </div>
+          <div class="cycle-arrow">→</div>
+          <div class="cycle-card cycle-4">
+            <div class="cycle-num">STEP 04</div>
+            <div class="cycle-eng">Measure</div>
+            <div class="cycle-kor">측정</div>
+            <div class="cycle-divider"></div>
+            <div class="cycle-detail">오류율·도달<br>·반복 활용률</div>
+          </div>
+        </div>
+        <div class="cycle-loop">
+          <span class="cycle-loop-label">↻ 측정 결과는 다음 진단 사이클로 피드백</span>
+        </div>
+      </div>
+
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <span class="step-tag">① Diagnose</span>
+          <h4>진단</h4>
+          <p>오류·반복 문의·민원·이해관계자 반응 데이터를 분석해 리스크와 병목 구간을 파악합니다. 감이 아닌 데이터 기반.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="6" cy="6" r="2"/></svg>
+          </div>
+          <span class="step-tag">② Design</span>
+          <h4>설계</h4>
+          <p>이슈 유형별 핵심 메시지와 문서 구조를 정리합니다. 대상별 톤·정보 깊이를 조정해 ‘누가 대응해도 같은 기준’.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <span class="step-tag">③ Deliver</span>
+          <h4>전달</h4>
+          <p>FAQ · 설명자료 · 체크리스트 · 숏폼 · PPT 등 실무에 바로 쓰이는 형태로 메시지를 확산합니다.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <span class="step-tag">④ Measure</span>
+          <h4>측정</h4>
+          <p>전달 속도·오류율 감소·반복 활용률·운영 성과 등 정량 지표로 효과를 검증하고 다음 사이클에 반영합니다.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ── TAB 4: ROLE FIT ── -->
+  <section class="tab-content" id="fit">
+    <article class="card">
+      <div class="section-eyebrow">Chapter 3</div>
+      <h2 class="section-title">케이뱅크 PR팀 Role Fit</h2>
+      <p class="section-desc">2026년 상반기 케이뱅크 PR팀의 실전 우선과제와, 제가 일해온 방식이 어떻게 맞물리는지 보여드립니다.</p>
+
+      <h3 class="sub-title">우선과제 ↔ 일하는 방식 (시각 매핑)</h3>
+      <div class="mermaid-wrap">
+        <div class="mapping-grid">
+          <div class="mapping-col left">
+            <div class="mapping-title">🏦 케이뱅크 PR팀 (2026)</div>
+            <div class="mapping-item">상장 첫해<br>성장 스토리 전파</div>
+            <div class="mapping-item">언론 리스크<br>관리 체계</div>
+            <div class="mapping-item">라이프스타일 제휴<br>스토리 업데이트</div>
+            <div class="mapping-item">디지털 자산<br>신사업 스토리</div>
+            <div class="mapping-item">홍보 성과 분석<br>AVE·관철도</div>
+          </div>
+          <div class="mapping-bridge">
+            <div class="mapping-bridge-arrow"></div>
+            <div class="mapping-bridge-arrow"></div>
+            <div class="mapping-bridge-arrow"></div>
+            <div class="mapping-bridge-arrow"></div>
+            <div class="mapping-bridge-arrow"></div>
+          </div>
+          <div class="mapping-col right">
+            <div class="mapping-title">👩🏻‍🚀 제 일하는 방식</div>
+            <div class="mapping-item">공시·IR 라인<br>메시지 정합성</div>
+            <div class="mapping-item">3단계 프레임<br>One Source 체계</div>
+            <div class="mapping-item">다자 조율 방법론<br>500곳 검증</div>
+            <div class="mapping-item">이해관계자별<br>톤 조절</div>
+            <div class="mapping-item">Power BI<br>피드백 루프</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">JD 4대 업무 ↔ 일해온 방식</h3>
+      <table class="fit-table">
+        <thead>
+          <tr>
+            <th>케이뱅크 PR팀 JD</th>
+            <th>제가 일해온 방식</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>① 홍보 전략 수립<br>및 홍보 아이템 발굴·기획</td>
+            <td>기관 KPI를 역설계하여 포지셔닝 전략을 수립하고 이해관계자별 맞춤 메시지를 설계했습니다. 신사업 2건(온누리상품권·디지털 온누리)의 대내외 커뮤니케이션 전략 기획·실행 경험 보유.</td>
+          </tr>
+          <tr>
+            <td>② 기획 홍보 실행<br>· 보도자료 작성 · 언론 커뮤니케이션</td>
+            <td>정부 제안서·사업계획서·규제기관 소명자료를 ‘독자 분석 → 메시지 구조화 → 팩트 기반 전달’ 원칙으로 직접 작성해왔습니다. 보도자료 본질과 <strong>동일한 역량 구조</strong>입니다.</td>
+          </tr>
+          <tr>
+            <td>③ 언론 리스크 관리<br>· 이슈 설명자료 작성·협의</td>
+            <td>방심위·식약처 소명자료 3년 6개월 직접 작성, 이슈 유형별 표준 키메시지 체계(One Source) 설계 → <strong>규정 위반 80% 감소 · 추가 소명 요청 ZERO.</strong></td>
+          </tr>
+          <tr>
+            <td>④ 협회 등 외부 유관기관<br>업무 협력 커뮤니케이션</td>
+            <td>정부기관·지자체·협력사 500곳+와 KPI·일정 기준으로 관계를 구축하며 ‘상대가 필요한 정보를 제때 주는 것’이 핵심임을 체득했습니다. 금융당국·협회·제휴사로 동일 구조 적용 가능.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="sub-title">2026 PR팀 우선과제 ↔ 적용</h3>
+      <table class="fit-table">
+        <thead>
+          <tr>
+            <th>PR팀 우선과제</th>
+            <th>제 일하는 방식 적용</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>상장 첫해 성장 스토리 전파<br>공시·IR 라인 메시지 정합성</td>
+            <td>규제·법무 라인과 싱크하며 문서를 작성해온 경험을 공시·IR 라인 메시지 일관성 관리로 전이. 상장사 맥락에서 ‘같은 사실을 다른 언어로 번역’하는 구조가 검증되었습니다.</td>
+          </tr>
+          <tr>
+            <td>언론 리스크 관리 체계<br>부정 이슈 발생 시 초기 대응 키메시지</td>
+            <td>방심위·식약처 소명자료 3년 6개월로 축적한 ‘사실 확인 → 원인 분석 → 재발 방지’ 3단계 프레임과 One Source 체계를 언론 리스크 초기 대응에 그대로 적용합니다.</td>
+          </tr>
+          <tr>
+            <td>라이프스타일 제휴 스토리 업데이트<br>무신사 MOU 등 제휴 성과의 분기별 언론 전달</td>
+            <td>제휴사 PR팀과의 키메시지 싱크 10분이 8할. 온누리·디지털 온누리 다자 이해관계자 조율 경험(500곳)을 동일 구조로 운용합니다.</td>
+          </tr>
+          <tr>
+            <td>디지털 자산·신사업 스토리<br>OBDIA · 스테이블코인 · 테크 리딩 뱅크</td>
+            <td>경제지·IT지·테크지의 리드 선호가 다른 점을 고려한 보도자료 분기 설계. 4가지+ 이해관계자별 톤 조절 경험이 신사업 커뮤니케이션에 직접 적용됩니다.</td>
+          </tr>
+          <tr>
+            <td>홍보 성과 분석<br>AVE · 키메시지 관철도 · 매체별 톤앤매너</td>
+            <td>Power BI 기반 커뮤니케이션 활동 전후 효과성 비교(오류율·도달률·반복 활용률) · 서베이 설계·실행. 콘텐츠 반복 활용률 5배 향상이 피드백 루프의 결과입니다.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- ── TAB 5: PROJECTS ── -->
+  <section class="tab-content" id="projects">
+    <article class="card">
+      <div class="section-eyebrow">Chapter 4</div>
+      <h2 class="section-title">Project — 실제로 만든 성과</h2>
+      <p class="section-desc">‘진단 → 설계 → 전달 → 측정’ 방식이 만든 성과를 두 프로젝트로 보여드립니다. 같은 구조가 방심위·식약처에서 금감원·언론·공시·IR 라인으로 그대로 이식됩니다.</p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <div class="project-title">Project A. 방송 리스크 사전 예방 체계 고도화</div>
+        <span class="project-period">심의팀 · 2021.06 ~ 2024.12 · 3년 6개월</span>
+      </div>
+      <div class="project-quote">이슈가 생긴 뒤 수습하는 구조에서, 데이터로 먼저 잡고 체계로 막는 구조로.</div>
+      <div class="mermaid-wrap" style="margin-bottom: 0; padding-top: 8px;">
+        <div class="project-flow">
+          <div class="flow-card tone-problem">
+            <div class="flow-tag">PROBLEM</div>
+            <div class="flow-name">문제</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">부서별<br>답변 불일치</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-cream">
+            <div class="flow-tag">STEP 01</div>
+            <div class="flow-name">진단</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">Power BI<br>상시 분석</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-cream2">
+            <div class="flow-tag">STEP 02</div>
+            <div class="flow-name">설계</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">One Source<br>3단계 프레임</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-blue-soft">
+            <div class="flow-tag">STEP 03</div>
+            <div class="flow-name">실행</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">6종 멀티포맷<br>AI 챗봇</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-blue-deep">
+            <div class="flow-tag">RESULT</div>
+            <div class="flow-name">성과</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">80%↓ · ZERO<br>87.5%↓ · 5배↑</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-result">
+        <span class="project-result-label">RESULT</span>
+        규정 위반 <strong>80% 감소</strong> · 민원 <strong>ZERO</strong> (2022~2024) · 도달 시간 <strong>87.5% 단축</strong>(30분→1분) · 반복 활용률 <strong>5배 향상</strong>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <div class="project-title">Project B. 정부기관 대외 커뮤니케이션 전략 · 20억 수주</div>
+        <span class="project-period">브랜드커뮤니케이션팀 · 2025.01 ~ 현재</span>
+      </div>
+      <div class="project-quote">이해관계자가 원하는 언어로 말했을 때, 수주가 따라왔습니다.</div>
+      <div class="mermaid-wrap" style="margin-bottom: 0; padding-top: 8px;">
+        <div class="project-flow">
+          <div class="flow-card tone-cream">
+            <div class="flow-tag">STEP 01</div>
+            <div class="flow-name">진단</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">기관 KPI<br>역설계</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-cream2">
+            <div class="flow-tag">STEP 02</div>
+            <div class="flow-name">설계</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">목표-실행<br>-성과지표</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-blue-soft">
+            <div class="flow-tag">STEP 03</div>
+            <div class="flow-name">전달</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">경쟁 PT<br>총괄 리딩</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-blue-mid">
+            <div class="flow-tag">STEP 04</div>
+            <div class="flow-name">관계관리</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">설명회→가이드<br>→FAQ→소통</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card tone-blue-deep">
+            <div class="flow-tag">RESULT</div>
+            <div class="flow-name">성과</div>
+            <div class="flow-divider"></div>
+            <div class="flow-detail">20억 수주<br>500곳 구축</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-result">
+        <span class="project-result-label">RESULT</span>
+        연 <strong>20억 수주</strong> (전년 대비 150%↑) · 협력사 <strong>500곳+</strong> 네트워크 구축 · 파트너 매출 효율 <strong>2배</strong>
+      </div>
+    </article>
+  </section>
+
+  <!-- ── TAB 6: GAP & 90-DAY ── -->
+  <section class="tab-content" id="gap">
+    <article class="card">
+      <div class="section-eyebrow">Chapter 5</div>
+      <h2 class="section-title">구조적 한계 + 90일 기여 계획</h2>
+      <p class="section-desc">금융권 홍보 · 기자 관계 · 보도자료 직접 작성 경험이 없다는 것을 부정하지 않습니다. 같은 역량 구조의 증거를 제시하고, 입사 첫 주부터 움직일 수 있는 계획으로 증명합니다.</p>
+
+      <h3 class="sub-title">구조적 한계 ↔ 전이 가능 역량</h3>
+      <div class="gap-list">
+        <div class="gap-card">
+          <div class="gap-left">
+            <div class="gap-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="gap-num">Gap 01</div>
+            <div class="gap-title">보도자료 직접 작성 경험 없음</div>
+            <div class="gap-q">“기자가 받아쓸 수 있는 리드를 뽑아본 적이 있나?”</div>
+          </div>
+          <div class="gap-right">
+            <div class="gap-answer"><strong>제안서·소명자료·성과보고서</strong>의 본질은 보도자료와 같습니다. 독자 분석 → 메시지 구조화 → 팩트 기반 전달. 규제기관·정부기관을 상대로 5년간 이 구조로 공식 문서를 직접 작성해왔습니다.</div>
+            <div class="transfer">
+              <div class="transfer-from">방심위 소명자료<br>정부 제안서</div>
+              <div class="transfer-arrow">→</div>
+              <div class="transfer-to">보도자료<br>기획자료</div>
+            </div>
+            <div class="gap-evidence">제안서 직접 작성 → 연 20억 수주(150%↑)</div>
+          </div>
+        </div>
+
+        <div class="gap-card">
+          <div class="gap-left">
+            <div class="gap-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="gap-num">Gap 02</div>
+            <div class="gap-title">기자 관계 · 출입처 네트워크 없음</div>
+            <div class="gap-q">“케이뱅크 출입 기자 이름 몇 명 알고 있나?”</div>
+          </div>
+          <div class="gap-right">
+            <div class="gap-answer">500곳 이해관계자 관계 구축 방법론을 그대로 적용합니다. <strong>설명회 → 가이드 → 지속소통</strong> 3단계. 기자 관계의 본질은 ‘상대가 필요한 정보를 제때 주는 것’이며, 이미 경제지·IT지·테크지 리드 선호 차이를 분석해 보도자료 3건을 톤 분해해봤습니다.</div>
+            <div class="transfer">
+              <div class="transfer-from">정부기관·협력사<br>500곳 관계 구축</div>
+              <div class="transfer-arrow">→</div>
+              <div class="transfer-to">출입 기자<br>네트워크</div>
+            </div>
+            <div class="gap-evidence">정부기관 평가 대응 시 내부 부서 커뮤니케이션 조율 리딩</div>
+          </div>
+        </div>
+
+        <div class="gap-card">
+          <div class="gap-left">
+            <div class="gap-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="gap-num">Gap 03</div>
+            <div class="gap-title">금융 도메인 · 인터넷은행 문법</div>
+            <div class="gap-q">“금융소비자보호법 조항 하나 말해보시겠어요?”</div>
+          </div>
+          <div class="gap-right">
+            <div class="gap-answer">방심위 규정을 단기간 학습해 소명자료까지 직접 작성했던 사람은 금융 규제도 같은 방식으로 학습합니다. 또한 케이뱅크의 <strong>상장사 맥락</strong>(공시·IR 라인 정합성)은 카카오뱅크·토스뱅크 네이티브가 보유하지 못한 차별점입니다.</div>
+            <div class="transfer">
+              <div class="transfer-from">방심위·식약처<br>규정 학습</div>
+              <div class="transfer-arrow">→</div>
+              <div class="transfer-to">금융소비자보호법<br>자본시장법</div>
+            </div>
+            <div class="gap-evidence">공시·IR 라인 메시지 정합성 관리 역량 (상장사 전용)</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">90일 기여 계획 — 배우고 나서 하는 게 아니라, 하면서 배웁니다</h3>
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-num">01</div>
+          <div class="plan-phase">Phase 1</div>
+          <h4>첫 30일</h4>
+          <ul>
+            <li>케이뱅크 최근 보도자료 30건 톤 분해</li>
+            <li>경제지·IT지·테크지 출입기자 매핑</li>
+            <li>리스크 유형 분류 · 뉴스 클리핑 리포트 직접 작성</li>
+            <li>공시·IR 라인 월간 톤 파악</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-num">02</div>
+          <div class="plan-phase">Phase 2</div>
+          <h4>60일</h4>
+          <ul>
+            <li>기획 보도자료 초안 직접 작성</li>
+            <li>월간 성과 분석 리포트(AVE·메시지 관철도) 운영</li>
+            <li>기자 취재 문의 1차 응대 · 내부 전달 실행</li>
+            <li>OBDIA·무신사 등 신사업 스토리 분기 업데이트 설계</li>
+          </ul>
+        </div>
+        <div class="plan-card">
+          <div class="plan-num">03</div>
+          <div class="plan-phase">Phase 3</div>
+          <h4>90일</h4>
+          <ul>
+            <li>언론 리스크 대응 체계 보강 제안(One Source 이식)</li>
+            <li>협회·당국 커뮤니케이션 구조 설계</li>
+            <li>이슈별 초기 대응 키메시지 라이브러리 구축</li>
+            <li>홍보 성과 정량 지표 대시보드 제안</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer class="footer">
+    최지현 · 1964byc2000@gmail.com · 010-9952-4726 · 작성 2026.04.25
+  </footer>
+</div>
+
+<script>
+mermaid.initialize({
+  startOnLoad: true,
+  theme: 'base',
+  themeVariables: {
+    fontFamily: 'Pretendard Variable, Pretendard, system-ui, sans-serif',
+    fontSize: '14px',
+    primaryColor: '#f3f1ed',
+    primaryTextColor: '#141823',
+    primaryBorderColor: '#0561aa',
+    lineColor: '#979088',
+    background: '#ffffff',
+  },
+  securityLevel: 'loose'
+});
+
+function showTab(evt, tabId) {
+  const contents = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-btn');
+  contents.forEach(c => c.classList.remove('active'));
+  buttons.forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  evt.currentTarget.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(() => mermaid.run({ querySelector: '.tab-content.active .mermaid' }), 50);
+}
+</script>
+
+</body>
+</html>
