@@ -1022,6 +1022,36 @@ a:hover { text-decoration: underline; }
   border-radius: 50%;
 }
 
+/* ── KPI box ── */
+.kpi-box {
+  background: linear-gradient(135deg, #e3eef9 0%, #f8f8f6 100%);
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-top: 18px;
+}
+.kpi-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.kpi-icon { font-size: 20px; }
+.kpi-title { font-size: 15px; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.kpi-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.kpi-num { font-size: 16px; font-weight: 800; color: var(--accent); }
+.kpi-item strong { color: var(--text-primary); font-weight: 700; }
+@media (max-width: 900px) {
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+}
+
 /* ── Footer ── */
 .footer {
   text-align: center;
@@ -1066,13 +1096,13 @@ a:hover { text-decoration: underline; }
     <img src="profile.png" alt="최지현" class="hero-photo" />
     <div>
       <div class="hero-name">최지현</div>
-      <div class="hero-role">케이뱅크 PR팀 · 언론홍보 담당자 지원</div>
+      <div class="hero-role">케이뱅크 언론홍보팀 · 언론홍보 담당자 지원</div>
       <div class="hero-tagline">
         규제기관을 직접 상대하며 위기 대응 체계를 설계해온 <span class="em">5년차 커뮤니케이터</span>.<br>
         상장 첫해 ‘테크 리딩 뱅크’ 성장 스토리를 흔들림 없이 전달합니다.
       </div>
       <div class="hero-meta">
-        <div class="item"><span class="label">전화</span> 010-9952-4726</div>
+        <div class="item"><span class="label">전화</span> 010-9707-0466</div>
         <div class="item"><span class="label">메일</span> 1964byc2000@gmail.com</div>
         <div class="item"><span class="label">주소</span> 서울 강동구</div>
       </div>
@@ -1094,7 +1124,7 @@ a:hover { text-decoration: underline; }
     <article class="card">
       <div class="section-eyebrow">Overview</div>
       <h2 class="section-title">한 눈에 보는 최지현</h2>
-      <p class="section-desc">규제기관 직접 대응과 다자 이해관계자 커뮤니케이션 5년의 경험을, 케이뱅크 PR팀의 실전 우선과제에 그대로 적용합니다.</p>
+      <p class="section-desc">규제기관 직접 대응과 다자 이해관계자 커뮤니케이션 5년의 경험을, 케이뱅크 언론홍보팀의 실전 우선과제에 그대로 적용합니다.</p>
 
       <div class="lead">
         <p>케이뱅크는 상장 첫해 <strong>‘테크 리딩 뱅크’</strong>로의 전환 국면에 있습니다. 언론·시장·임직원 3자에 같은 메시지가 흔들림 없이 닿는 <strong>구조를 만드는 일</strong> — 제가 5년간 해온 일과 같습니다.</p>
@@ -1108,11 +1138,11 @@ a:hover { text-decoration: underline; }
         </div>
         <div class="stat">
           <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <div class="num"><span class="accent">20</span><span style="font-size:18px">억</span></div><div class="label">사업비 수주 (150%↑)</div>
+          <div class="num"><span class="accent">30</span><span style="font-size:18px">억</span></div><div class="label">사업비 수주 (300%↑)</div>
         </div>
         <div class="stat">
           <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div class="num">500<span style="font-size:18px">곳+</span></div><div class="label">이해관계자 네트워크</div>
+          <div class="num">300<span style="font-size:18px">곳+</span></div><div class="label">이해관계자 네트워크</div>
         </div>
         <div class="stat">
           <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1138,7 +1168,7 @@ a:hover { text-decoration: underline; }
         </div>
       </div>
 
-      <h3 class="sub-title">케이뱅크 PR팀 JD 매칭도</h3>
+      <h3 class="sub-title">케이뱅크 언론홍보팀 JD 매칭도</h3>
       <div class="match-list">
         <div class="match">
           <div class="match-head"><span class="match-name">① 홍보 전략 수립 · 홍보 아이템 발굴·기획</span><span class="match-pct">85%</span></div>
@@ -1153,8 +1183,8 @@ a:hover { text-decoration: underline; }
           <div class="match-bar"><div class="match-fill" style="width: 95%;"></div></div>
         </div>
         <div class="match">
-          <div class="match-head"><span class="match-name">④ 협회 등 외부 유관기관 업무 협력 커뮤니케이션</span><span class="match-pct">90%</span></div>
-          <div class="match-bar"><div class="match-fill" style="width: 90%;"></div></div>
+          <div class="match-head"><span class="match-name">④ 협회 등 외부 유관기관 업무 협력 커뮤니케이션</span><span class="match-pct">100%</span></div>
+          <div class="match-bar"><div class="match-fill" style="width: 100%;"></div></div>
         </div>
       </div>
     </article>
@@ -1169,7 +1199,7 @@ a:hover { text-decoration: underline; }
           <div class="timeline-period">2025.01 ~ 현재<span class="duration">1년 3개월</span></div>
           <div>
             <div class="timeline-title">현대홈쇼핑 · 브랜드커뮤니케이션팀 · 선임(대리)</div>
-            <div class="timeline-desc">정부사업 기획·수주·운영 + 다자 이해관계자 조율 + 신사업 내부 브랜딩. 연 20억 수주(150%↑), 300곳 신규 협력사 소싱.</div>
+            <div class="timeline-desc">정부사업 기획·수주·운영 + 다자 이해관계자 조율 + 신사업 내부 브랜딩. 연 30억 수주(300%↑), 300곳 신규 협력사 소싱.</div>
           </div>
         </div>
         <div class="timeline-row">
@@ -1218,7 +1248,7 @@ a:hover { text-decoration: underline; }
         <div class="skill-row">
           <div class="skill-meta">
             <div class="skill-name">2. 이해관계자 분석 기반 메시지 설계</div>
-            <div class="skill-evidence">기관 KPI 역설계 → 제안서 전략 · PT 총괄 → 연 20억 수주(150%↑) · 4가지+ 이해관계자별 문서</div>
+            <div class="skill-evidence">기관 KPI 역설계 → 제안서 전략 · PT 총괄 → 연 30억 수주(300%↑) · 4가지+ 이해관계자별 문서</div>
           </div>
           <div class="skill-level">
             <span class="lv-stars">★★★★★</span>
@@ -1248,7 +1278,7 @@ a:hover { text-decoration: underline; }
         <div class="skill-row">
           <div class="skill-meta">
             <div class="skill-name">5. 이해관계자 관계 구축 · 조율</div>
-            <div class="skill-evidence">정부기관·지자체·협력사 500곳 외부 관계 · 설명회→가이드→소통채널 체계 · 내부 부서 조율</div>
+            <div class="skill-evidence">정부기관·지자체·협력사 300곳+ 외부 관계 · 설명회→가이드→소통채널 체계 · 내부 부서 조율</div>
           </div>
           <div class="skill-level">
             <span class="lv-stars">★★★★★</span>
@@ -1350,7 +1380,7 @@ a:hover { text-decoration: underline; }
           </div>
           <span class="step-tag">① Diagnose</span>
           <h4>진단</h4>
-          <p>오류·반복 문의·민원·이해관계자 반응 데이터를 분석해 리스크와 병목 구간을 파악합니다. 감이 아닌 데이터 기반.</p>
+          <p>오류·반복 문의·민원·이해관계자 반응 데이터를 분석해 리스크와 병목 구간을 파악합니다. 감이 아닌 데이터 기반하여 진단합니다.</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
@@ -1358,7 +1388,7 @@ a:hover { text-decoration: underline; }
           </div>
           <span class="step-tag">② Design</span>
           <h4>설계</h4>
-          <p>이슈 유형별 핵심 메시지와 문서 구조를 정리합니다. 대상별 톤·정보 깊이를 조정해 ‘누가 대응해도 같은 기준’.</p>
+          <p>이슈 유형별 핵심 메시지와 문서 구조를 정리합니다. 대상별 톤·정보 깊이를 조정해 ‘누가 대응해도 같은 기준’으로 설계합니다.</p>
         </div>
         <div class="step-card">
           <div class="step-icon">
@@ -1384,19 +1414,19 @@ a:hover { text-decoration: underline; }
   <section class="tab-content" id="fit">
     <article class="card">
       <div class="section-eyebrow">Chapter 3</div>
-      <h2 class="section-title">케이뱅크 PR팀 Role Fit</h2>
-      <p class="section-desc">2026년 상반기 케이뱅크 PR팀의 실전 우선과제와, 제가 일해온 방식이 어떻게 맞물리는지 보여드립니다.</p>
+      <h2 class="section-title">케이뱅크 언론홍보팀 Role Fit</h2>
+      <p class="section-desc">2026년 상반기 케이뱅크 언론홍보팀의 실전 우선과제와, 제가 일해온 방식이 어떻게 맞물리는지 보여드립니다.</p>
 
       <h3 class="sub-title">우선과제 ↔ 일하는 방식 (시각 매핑)</h3>
       <div class="mermaid-wrap">
         <div class="mapping-grid">
           <div class="mapping-col left">
-            <div class="mapping-title">🏦 케이뱅크 PR팀 (2026)</div>
-            <div class="mapping-item">상장 첫해<br>성장 스토리 전파</div>
-            <div class="mapping-item">언론 리스크<br>관리 체계</div>
-            <div class="mapping-item">라이프스타일 제휴<br>스토리 업데이트</div>
-            <div class="mapping-item">디지털 자산<br>신사업 스토리</div>
-            <div class="mapping-item">홍보 성과 분석<br>AVE·관철도</div>
+            <div class="mapping-title">🏦 케이뱅크 언론홍보팀 (2026)</div>
+            <div class="mapping-item">① IPO 상장 직후<br>신뢰 관리 메시지</div>
+            <div class="mapping-item">② 업비트 의존도<br>29.6% 평판 리스크</div>
+            <div class="mapping-item">③ 토스뱅크<br>브랜드평판 1위 추격</div>
+            <div class="mapping-item">④ 신상품 PR<br>(무신사·부동산담보·자유적금)</div>
+            <div class="mapping-item">⑤ 위기관리 PR 자산<br>외부 확산</div>
           </div>
           <div class="mapping-bridge">
             <div class="mapping-bridge-arrow"></div>
@@ -1407,11 +1437,11 @@ a:hover { text-decoration: underline; }
           </div>
           <div class="mapping-col right">
             <div class="mapping-title">👩🏻‍🚀 제 일하는 방식</div>
-            <div class="mapping-item">공시·IR 라인<br>메시지 정합성</div>
-            <div class="mapping-item">3단계 프레임<br>One Source 체계</div>
-            <div class="mapping-item">다자 조율 방법론<br>500곳 검증</div>
-            <div class="mapping-item">이해관계자별<br>톤 조절</div>
-            <div class="mapping-item">Power BI<br>피드백 루프</div>
+            <div class="mapping-item">공시·IR 정합성<br>메시지 일관성 운영</div>
+            <div class="mapping-item">표준 키메시지<br>One Source 사전 정의</div>
+            <div class="mapping-item">콘텐츠 채널<br>도달력 강화</div>
+            <div class="mapping-item">매체별 PR 캘린더<br>분기 메시지 운영</div>
+            <div class="mapping-item">정량 자산 기반<br>분기 스토리 발굴</div>
           </div>
         </div>
       </div>
@@ -1420,58 +1450,58 @@ a:hover { text-decoration: underline; }
       <table class="fit-table">
         <thead>
           <tr>
-            <th>케이뱅크 PR팀 JD</th>
-            <th>제가 일해온 방식</th>
+            <th>케이뱅크 언론홍보팀 JD</th>
+            <th>제가 일해온 방식 + 케이뱅크 적용</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>① 홍보 전략 수립<br>및 홍보 아이템 발굴·기획</td>
-            <td>기관 KPI를 역설계하여 포지셔닝 전략을 수립하고 이해관계자별 맞춤 메시지를 설계했습니다. 신사업 2건(온누리상품권·디지털 온누리)의 대내외 커뮤니케이션 전략 기획·실행 경험 보유.</td>
+            <td>기관 KPI 역설계 → 포지셔닝·맞춤 메시지 → <strong>30억 수주(300%↑) 견인</strong> / 신사업(온누리상품권) 커뮤니케이션 경험.<br><br><strong>케이뱅크 적용:</strong> 신상품(무신사 제휴·부동산담보·사장님대출 3억) PR 캘린더 기획 + 분기 IR 키메시지 정합성 운영 + “인뱅 최대 중저신용 34.1%” 등 정량 자산 기반 분기 스토리 발굴</td>
           </tr>
           <tr>
             <td>② 기획 홍보 실행<br>· 보도자료 작성 · 언론 커뮤니케이션</td>
-            <td>정부 제안서·사업계획서·규제기관 소명자료를 ‘독자 분석 → 메시지 구조화 → 팩트 기반 전달’ 원칙으로 직접 작성해왔습니다. 보도자료 본질과 <strong>동일한 역량 구조</strong>입니다.</td>
+            <td>제안서·사업계획서·설명자료·소명자료 5년 작성 = 보도자료 본질(독자 분석 → 핵심 메시지 도출 → 팩트 기반 전달) <strong>동일 구조</strong>. 보도자료 직접 작성 경험은 없으나 인접 역량 5년 보유 — 입사 1개월 내 케이뱅크 표준 양식 학습 완료 가능.<br><br><strong>케이뱅크 적용:</strong> 입사 후 1개월 내 케이뱅크 보도자료 50건+ 직독 → 키메시지·톤 패턴 정리 / 신상품·분기 IR 보도자료 초안 작성 / 출입기자 매체별 톤 차이 분석 후 맞춤 배포</td>
           </tr>
           <tr>
             <td>③ 언론 리스크 관리<br>· 이슈 설명자료 작성·협의</td>
-            <td>방심위·식약처 소명자료 3년 6개월 직접 작성, 이슈 유형별 표준 키메시지 체계(One Source) 설계 → <strong>규정 위반 80% 감소 · 추가 소명 요청 ZERO.</strong></td>
+            <td>방심위·식약처 3년 6개월 / One Source 키메시지 체계 / ‘사실 확인 → 원인 분석 → 재발 방지’ 3단계 프레임 / 동일 유형 위반 <strong>80% 감소·메시지 도달 87.5% 단축</strong>.<br><br><strong>케이뱅크 적용:</strong> 업비트 의존도 이슈 표준 키메시지 사전 정의(이자율·예치금 안정성·1거래소-1은행 규제 변수 매뉴얼화) / 금융사고·전산장애·예금자보호 등 인뱅 공통 이슈 매뉴얼 정립 / IPO 후 주가 변동성 시기 키메시지 운영</td>
           </tr>
           <tr>
             <td>④ 협회 등 외부 유관기관<br>업무 협력 커뮤니케이션</td>
-            <td>정부기관·지자체·협력사 500곳+와 KPI·일정 기준으로 관계를 구축하며 ‘상대가 필요한 정보를 제때 주는 것’이 핵심임을 체득했습니다. 금융당국·협회·제휴사로 동일 구조 적용 가능.</td>
+            <td>정부기관·지자체·협력사 <strong>300곳+</strong> 관계 구축, KPI·일정 기준 관리 / 다자 이해관계자 메시지 정합성 관리.<br><br><strong>케이뱅크 적용:</strong> 은행연합회·금감원·금융위·예금보험공사 등 유관기관 정기 커뮤니케이션 운영 / 사내 IR·법무·CEO실 협업 메시지 일관성 유지 / 업비트 등 파트너사 공동 대응 시 본사·파트너 메시지 정합성 관리</td>
           </tr>
         </tbody>
       </table>
 
-      <h3 class="sub-title">2026 PR팀 우선과제 ↔ 적용</h3>
+      <h3 class="sub-title">2026 언론홍보팀 우선과제 ↔ 적용 (케이뱅크 인사이트 직접 반영)</h3>
       <table class="fit-table">
         <thead>
           <tr>
-            <th>PR팀 우선과제</th>
+            <th>언론홍보팀 우선과제</th>
             <th>제 일하는 방식 적용</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>상장 첫해 성장 스토리 전파<br>공시·IR 라인 메시지 정합성</td>
-            <td>규제·법무 라인과 싱크하며 문서를 작성해온 경험을 공시·IR 라인 메시지 일관성 관리로 전이. 상장사 맥락에서 ‘같은 사실을 다른 언어로 번역’하는 구조가 검증되었습니다.</td>
+            <td>① IPO 상장(2026.03.05 KOSPI) 직후<br>신뢰 관리 메시지 운영</td>
+            <td>공모가 8,300원 / 시총 3.37조원 / FI 약속 IRR 8% 환경. <strong>사상 최대 영업이익 1,329억(+708%)·영업이익률 11.8%</strong> 정량 자산을 분기 IR·증권 매체에 일관 전파.</td>
           </tr>
           <tr>
-            <td>언론 리스크 관리 체계<br>부정 이슈 발생 시 초기 대응 키메시지</td>
-            <td>방심위·식약처 소명자료 3년 6개월로 축적한 ‘사실 확인 → 원인 분석 → 재발 방지’ 3단계 프레임과 One Source 체계를 언론 리스크 초기 대응에 그대로 적용합니다.</td>
+            <td>② 업비트 의존도 29.6%<br>평판 리스크 대응</td>
+            <td>두나무 예치금 8.48조 / 총수신 28.57조. <strong>“코인뱅크” 별칭과 1거래소-1은행 규제 변수</strong>에 대응할 수익 다각화(부동산담보·사장님대출·플랫폼금융) 메시지 강화.</td>
           </tr>
           <tr>
-            <td>라이프스타일 제휴 스토리 업데이트<br>무신사 MOU 등 제휴 성과의 분기별 언론 전달</td>
-            <td>제휴사 PR팀과의 키메시지 싱크 10분이 8할. 온누리·디지털 온누리 다자 이해관계자 조율 경험(500곳)을 동일 구조로 운용합니다.</td>
+            <td>③ 토스뱅크<br>브랜드평판 1위 추격</td>
+            <td>2025.12 토스(1위 209만점) > <strong>케이뱅크(2위 154만점)</strong> > 카카오(3위 125만점). 콘텐츠 채널 도달력 강화로 1위 추격.</td>
           </tr>
           <tr>
-            <td>디지털 자산·신사업 스토리<br>OBDIA · 스테이블코인 · 테크 리딩 뱅크</td>
-            <td>경제지·IT지·테크지의 리드 선호가 다른 점을 고려한 보도자료 분기 설계. 4가지+ 이해관계자별 톤 조절 경험이 신사업 커뮤니케이션에 직접 적용됩니다.</td>
+            <td>④ 신상품 PR<br>(무신사 제휴·부동산담보·사장님대출 3억·자유적금 4.80%)</td>
+            <td><strong>인뱅 최고 금리 자유적금 / 사장님대출 1억→3억 한도 확대 / 무신사 전용 금융상품 출시</strong> 메시지 캘린더 운영.</td>
           </tr>
           <tr>
-            <td>홍보 성과 분석<br>AVE · 키메시지 관철도 · 매체별 톤앤매너</td>
-            <td>Power BI 기반 커뮤니케이션 활동 전후 효과성 비교(오류율·도달률·반복 활용률) · 서베이 설계·실행. 콘텐츠 반복 활용률 5배 향상이 피드백 루프의 결과입니다.</td>
+            <td>⑤ 위기관리 PR 자산<br>외부 확산</td>
+            <td><strong>2025 금감원 보이스피싱 유공자 표창(기관 유일) / 중저신용 비중 34.1%(인뱅 최대) / 2025 소셜아이어워드 금융부문 통합대상</strong> 등 정량 자산 분기 단위 외부 확산.</td>
           </tr>
         </tbody>
       </table>
@@ -1534,11 +1564,15 @@ a:hover { text-decoration: underline; }
         <span class="project-result-label">RESULT</span>
         규정 위반 <strong>80% 감소</strong> · 민원 <strong>ZERO</strong> (2022~2024) · 도달 시간 <strong>87.5% 단축</strong>(30분→1분) · 반복 활용률 <strong>5배 향상</strong>
       </div>
+      <div class="project-result" style="border-left-color: var(--accent); background: #e3eef9; margin-top: 10px;">
+        <span class="project-result-label" style="background: var(--accent-soft); color: var(--accent);">✅ 케이뱅크 적용 시나리오</span>
+        동일한 3단계 프레임을 케이뱅크 위기관리 PR에 즉시 적용 가능. <strong>① 업비트 의존도 29.6% 이슈</strong> → 표준 키메시지 사전 정의 <strong>② 보이스피싱·금융사고·전산장애</strong> 등 인뱅 공통 이슈 → One Source 매뉴얼 운영 <strong>③ IPO 후 주가 변동성 시기</strong> → 본사·증권 매체 동시 키메시지 배포 구조 구축. 이미 케이뱅크는 <strong>2025 금감원 보이스피싱 유공자 표창</strong>을 받은 위기관리 강점 영역으로, 본인 강점과 직접 매칭됨.
+      </div>
     </article>
 
     <article class="project">
       <div class="project-head">
-        <div class="project-title">Project B. 정부기관 대외 커뮤니케이션 전략 · 20억 수주</div>
+        <div class="project-title">Project B. 정부기관 대외 커뮤니케이션 전략 · 30억 수주</div>
         <span class="project-period">브랜드커뮤니케이션팀 · 2025.01 ~ 현재</span>
       </div>
       <div class="project-quote">이해관계자가 원하는 언어로 말했을 때, 수주가 따라왔습니다.</div>
@@ -1576,13 +1610,17 @@ a:hover { text-decoration: underline; }
             <div class="flow-tag">RESULT</div>
             <div class="flow-name">성과</div>
             <div class="flow-divider"></div>
-            <div class="flow-detail">20억 수주<br>500곳 구축</div>
+            <div class="flow-detail">30억 수주<br>300곳 구축</div>
           </div>
         </div>
       </div>
       <div class="project-result">
         <span class="project-result-label">RESULT</span>
-        연 <strong>20억 수주</strong> (전년 대비 150%↑) · 협력사 <strong>500곳+</strong> 네트워크 구축 · 파트너 매출 효율 <strong>2배</strong>
+        연 <strong>30억 수주</strong> (전년 대비 300%↑) · 협력사 <strong>300곳+</strong> 네트워크 구축 · 파트너 매출 효율 <strong>2배</strong>
+      </div>
+      <div class="project-result" style="border-left-color: var(--accent); background: #e3eef9; margin-top: 10px;">
+        <span class="project-result-label" style="background: var(--accent-soft); color: var(--accent);">✅ 케이뱅크 적용 시나리오</span>
+        “상대의 KPI를 역설계해 메시지를 구조화하는 방법”은 언론사·금융당국·증권 매체·글로벌 본사 대상 커뮤니케이션에 동일 작동. <strong>① 출입기자별 매체 톤·관심사 역설계</strong> → 맞춤 보도자료 배포 <strong>② 금감원·금융위·은행연합회 정기 커뮤니케이션</strong> → 기관별 KPI 기반 메시지 운영 <strong>③ 신상품(무신사 제휴·부동산담보) 출시 시</strong> 매체별 차별화 메시지 설계 <strong>④ 분기 IR 컨퍼런스 메시지 정합성 운영</strong>.
       </div>
     </article>
   </section>
@@ -1606,13 +1644,13 @@ a:hover { text-decoration: underline; }
             <div class="gap-q">“기자가 받아쓸 수 있는 리드를 뽑아본 적이 있나?”</div>
           </div>
           <div class="gap-right">
-            <div class="gap-answer"><strong>제안서·소명자료·성과보고서</strong>의 본질은 보도자료와 같습니다. 독자 분석 → 메시지 구조화 → 팩트 기반 전달. 규제기관·정부기관을 상대로 5년간 이 구조로 공식 문서를 직접 작성해왔습니다.</div>
+            <div class="gap-answer">보도자료의 본질(<strong>독자 분석 → 핵심 메시지 도출 → 팩트 기반 전달</strong>)은 5년간 작성해온 공식 문서와 동일. 방심위·식약처 가이드라인 단기 학습으로 정부기관 30억 수주를 견인한 학습 패턴을 동일하게 적용해, 케이뱅크 표준 보도자료 양식·톤은 <strong>입사 후 1개월 내 학습 완료 가능</strong>하며 1차 초안부터 즉시 투입 가능.</div>
             <div class="transfer">
               <div class="transfer-from">방심위 소명자료<br>정부 제안서</div>
               <div class="transfer-arrow">→</div>
               <div class="transfer-to">보도자료<br>기획자료</div>
             </div>
-            <div class="gap-evidence">제안서 직접 작성 → 연 20억 수주(150%↑)</div>
+            <div class="gap-evidence">제안서 직접 작성 → 연 30억 수주(300%↑)</div>
           </div>
         </div>
 
@@ -1626,9 +1664,9 @@ a:hover { text-decoration: underline; }
             <div class="gap-q">“케이뱅크 출입 기자 이름 몇 명 알고 있나?”</div>
           </div>
           <div class="gap-right">
-            <div class="gap-answer">500곳 이해관계자 관계 구축 방법론을 그대로 적용합니다. <strong>설명회 → 가이드 → 지속소통</strong> 3단계. 기자 관계의 본질은 ‘상대가 필요한 정보를 제때 주는 것’이며, 이미 경제지·IT지·테크지 리드 선호 차이를 분석해 보도자료 3건을 톤 분해해봤습니다.</div>
+            <div class="gap-answer">300곳 이해관계자 관계 구축에 사용한 검증된 방법론(<strong>설명회 → 가이드 → 정기 소통 채널</strong>)을 동일하게 적용. <strong>입사 후 1개월:</strong> 출입기자 매핑 + 매체별 키메시지 톤 분석 / <strong>2개월:</strong> 1:1 인사 + 정기 백그라운드 자료 제공 / <strong>3개월:</strong> 기자 문의 1차 응대 가능.</div>
             <div class="transfer">
-              <div class="transfer-from">정부기관·협력사<br>500곳 관계 구축</div>
+              <div class="transfer-from">정부기관·협력사<br>300곳 관계 구축</div>
               <div class="transfer-arrow">→</div>
               <div class="transfer-to">출입 기자<br>네트워크</div>
             </div>
@@ -1646,13 +1684,24 @@ a:hover { text-decoration: underline; }
             <div class="gap-q">“금융소비자보호법 조항 하나 말해보시겠어요?”</div>
           </div>
           <div class="gap-right">
-            <div class="gap-answer">방심위 규정을 단기간 학습해 소명자료까지 직접 작성했던 사람은 금융 규제도 같은 방식으로 학습합니다. 또한 케이뱅크의 <strong>상장사 맥락</strong>(공시·IR 라인 정합성)은 카카오뱅크·토스뱅크 네이티브가 보유하지 못한 차별점입니다.</div>
+            <div class="gap-answer">케이뱅크 핵심 PR 이슈는 <strong>이미 사전 분석 완료</strong>:
+              <ul style="margin: 10px 0 12px; padding-left: 18px; font-size: 13px; color: var(--text-secondary); line-height: 1.7;">
+                <li>① IPO 3차 도전 끝 <strong>2026.03.05 KOSPI 상장</strong> (공모가 8,300원 / 시총 3.37조)</li>
+                <li>② 업비트 의존도 <strong>29.6%</strong> (두나무 예치금 8.48조)</li>
+                <li>③ 2024 영업이익률 <strong>11.8%</strong> (사상 최대)</li>
+                <li>④ 중저신용 비중 <strong>34.1%</strong> (인뱅 최대)</li>
+                <li>⑤ 2025 금감원 <strong>보이스피싱 유공자 표창</strong> (기관 유일)</li>
+                <li>⑥ 2025 <strong>소셜아이어워드 금융부문 통합대상</strong></li>
+                <li>⑦ 토스뱅크 <strong>브랜드평판 1위 추격</strong></li>
+              </ul>
+              상장사 맥락(공시·IR 정합성)은 본인 메시지 일관성 운영 강점과 직접 매칭.
+            </div>
             <div class="transfer">
               <div class="transfer-from">방심위·식약처<br>규정 학습</div>
               <div class="transfer-arrow">→</div>
               <div class="transfer-to">금융소비자보호법<br>자본시장법</div>
             </div>
-            <div class="gap-evidence">공시·IR 라인 메시지 정합성 관리 역량 (상장사 전용)</div>
+            <div class="gap-evidence">케이뱅크 7대 핵심 이슈 사전 분석 완료</div>
           </div>
         </div>
       </div>
@@ -1661,43 +1710,57 @@ a:hover { text-decoration: underline; }
       <div class="plan-grid">
         <div class="plan-card">
           <div class="plan-num">01</div>
-          <div class="plan-phase">Phase 1</div>
+          <div class="plan-phase">Phase 1 · 학습 + 매핑</div>
           <h4>첫 30일</h4>
           <ul>
-            <li>케이뱅크 최근 보도자료 30건 톤 분해</li>
-            <li>경제지·IT지·테크지 출입기자 매핑</li>
-            <li>리스크 유형 분류 · 뉴스 클리핑 리포트 직접 작성</li>
-            <li>공시·IR 라인 월간 톤 파악</li>
+            <li>케이뱅크 보도자료 50건+ 직독 → 톤·키메시지 패턴 정리</li>
+            <li>출입기자 명단·매체별 특성 매핑 (경제지·금융전문지·증권지·테크지 분류)</li>
+            <li>일일 뉴스 클리핑 리포트 작성·공유 (업비트·IPO·신상품 모니터링)</li>
+            <li>공시·IR 라인 톤 파악 (분기 IR·증권 매체 운영)</li>
           </ul>
         </div>
         <div class="plan-card">
           <div class="plan-num">02</div>
-          <div class="plan-phase">Phase 2</div>
+          <div class="plan-phase">Phase 2 · 초안 + 분석</div>
           <h4>60일</h4>
           <ul>
-            <li>기획 보도자료 초안 직접 작성</li>
-            <li>월간 성과 분석 리포트(AVE·메시지 관철도) 운영</li>
-            <li>기자 취재 문의 1차 응대 · 내부 전달 실행</li>
-            <li>OBDIA·무신사 등 신사업 스토리 분기 업데이트 설계</li>
+            <li>신상품 보도자료 초안 작성 (무신사 제휴·부동산담보·사장님대출 한도 3억)</li>
+            <li>월간 PR 성과 분석 (AVE·키메시지 반영도)</li>
+            <li>기자 문의 1차 응대 시작</li>
+            <li>분기 PR 캘린더 설계 (“인뱅 최대 중저신용 34.1%” 외부 확산 + 신사업 분기 업데이트)</li>
           </ul>
         </div>
         <div class="plan-card">
           <div class="plan-num">03</div>
-          <div class="plan-phase">Phase 3</div>
+          <div class="plan-phase">Phase 3 · 체계 + 제안</div>
           <h4>90일</h4>
           <ul>
-            <li>언론 리스크 대응 체계 보강 제안(One Source 이식)</li>
-            <li>협회·당국 커뮤니케이션 구조 설계</li>
+            <li>언론 리스크 대응 체계 보강 제안 (One Source 적용 — 업비트·금융사고·전산장애)</li>
+            <li>은행연합회·금감원·금융위·예금보험공사 등 유관기관 정기 커뮤니케이션 구조 설계</li>
             <li>이슈별 초기 대응 키메시지 라이브러리 구축</li>
-            <li>홍보 성과 정량 지표 대시보드 제안</li>
+            <li>홍보 성과 대시보드 제안 (Power BI 활용)</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="kpi-box">
+        <div class="kpi-head">
+          <span class="kpi-icon">📌</span>
+          <span class="kpi-title">90일 측정 KPI</span>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi-item"><span class="kpi-num">①</span> 키메시지 반영도 <strong>≥ 80%</strong></div>
+          <div class="kpi-item"><span class="kpi-num">②</span> 위기 응답 시간 <strong>50% 단축</strong></div>
+          <div class="kpi-item"><span class="kpi-num">③</span> 분기 보도자료 <strong>5건+</strong> 작성</div>
+          <div class="kpi-item"><span class="kpi-num">④</span> 출입기자 매핑 <strong>30명+</strong> 완료</div>
+          <div class="kpi-item"><span class="kpi-num">⑤</span> 월간 클리핑 리포트 <strong>정기 운영</strong></div>
         </div>
       </div>
     </article>
   </section>
 
   <footer class="footer">
-    최지현 · 1964byc2000@gmail.com · 010-9952-4726 · 작성 2026.04.25
+    최지현 · 1964byc2000@gmail.com · 010-9707-0466 · 작성 2026.04.25
   </footer>
 </div>
 
